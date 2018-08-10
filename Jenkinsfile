@@ -1,7 +1,6 @@
 pipeline {
     agent { docker {
       image 'maven:3-alpine'
-//      args '-u root'
       } }
     stages {
         stage('build') {
@@ -9,6 +8,11 @@ pipeline {
                 sh 'mvn --version'
                 sh 'echo "Hello World!!!!!!!!!!!!!!!!!!"'
             }
+        }
+        stage('test') {
+          steps {
+            sh 'mvn clean test'
+          }
         }
     }
 }
