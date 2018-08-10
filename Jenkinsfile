@@ -11,7 +11,7 @@ pipeline {
         }
         stage('test') {
           steps {
-            sh 'mvn clean test'
+            sh 'mvn -f **/pom.xml clean test'
           }
         }
     }
