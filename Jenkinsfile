@@ -4,11 +4,15 @@ pipeline {
  //     args '-u root'
       } }
     stages {
+        stage('test') {
+          steps {
+            sh 'mvn -f **/pom.xml clean test'
+          }
+        }
         stage('build') {
-            steps {
-                sh 'mvn --version'
-                sh 'echo "Hello World!"'
-            }
+          steps {
+            sh 'mvn -f **/pom.xml install'
+          }
         }
     }
 }
