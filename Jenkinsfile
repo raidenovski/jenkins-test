@@ -1,7 +1,6 @@
 pipeline {
     agent { docker {
       image 'maven:3-alpine'
- //     args '-u root'
       } }
     stages {
         stage('test') {
@@ -12,6 +11,10 @@ pipeline {
         stage('build') {
           steps {
             sh 'mvn -f **/pom.xml install'
+            sh '''
+            echo "doing some multiline shell commands"
+            ls -lah
+            '''
           }
         }
     }
