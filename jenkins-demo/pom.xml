@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>redis-demo</name>
+	<name>jenkins-demo</name>
 	<description>Jenkins Demo</description>
 
 	<parent>
