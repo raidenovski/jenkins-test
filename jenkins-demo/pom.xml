@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +16,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.14.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
@@ -42,14 +43,47 @@
 		</dependency>
 	</dependencies>
 
+	<!-- <build> -->
+	<!-- <plugins> -->
+	<!-- <plugin> -->
+	<!-- <groupId>org.springframework.boot</groupId> -->
+	<!-- <artifactId>spring-boot-maven-plugin</artifactId> -->
+	<!-- </plugin> -->
+	<!-- </plugins> -->
+	<!-- </build> -->
+
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>0.9.9</version>
+				<configuration>
+					<from>
+						<image>openjdk:alpine</image>
+						<credHelper>gcr</credHelper>
+					</from>
+					<to>
+						<image>eu.gcr.io/idb-mobile/test/misc/jib-test:0.0.1</image>
+						<credHelper>gcr</credHelper>
+					</to>
+					<container>
+						<jvmFlags>
+							<jvmFlag>-Xms512m</jvmFlag>
+							<jvmFlag>-Xdebug</jvmFlag>
+						</jvmFlags>
+						<mainClass>com.urosht.BootApplication</mainClass>
+						<args>
+							<arg>some</arg>
+							<arg>args</arg>
+						</args>
+						<ports>
+							<port>8080</port>
+						</ports>
+					</container>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>
