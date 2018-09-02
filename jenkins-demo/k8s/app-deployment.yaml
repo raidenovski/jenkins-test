@@ -1,5 +1,5 @@
 ---
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-app
@@ -14,7 +14,8 @@ spec:
       labels:
         app: my-app
     spec:
-      containers: my-app
-      image: nediar/jib-test:0.0.2
-      ports:
-        - containerPort: 8080
+      containers:
+        - name: my-app
+          image: nediar/jib-test:0.0.2
+          ports:
+            - containerPort: 8080

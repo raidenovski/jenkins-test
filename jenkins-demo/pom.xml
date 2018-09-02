@@ -43,49 +43,49 @@
 		</dependency>
 	</dependencies>
 
-	<!-- <build> -->
-	<!-- <plugins> -->
-	<!-- <plugin> -->
-	<!-- <groupId>org.springframework.boot</groupId> -->
-	<!-- <artifactId>spring-boot-maven-plugin</artifactId> -->
-	<!-- </plugin> -->
-	<!-- </plugins> -->
-	<!-- </build> -->
-
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>jib-maven-plugin</artifactId>
-				<version>0.9.9</version>
-				<configuration>
-					<from>
-						<image>openjdk:alpine</image>
-					</from>
-					<to>
-						<image>eu.gcr.io/idb-mobile/test/misc/jib-test:${project.version}</image>
-						<auth>
-							<username>${env.REGISTRY_USERNAME}</username>
-							<password>${env.REGISTRY_PASSWORD}</password>
-						</auth>
-					</to>
-					<container>
-						<jvmFlags>
-							<jvmFlag>-Xms512m</jvmFlag>
-							<jvmFlag>-Xdebug</jvmFlag>
-						</jvmFlags>
-						<mainClass>com.urosht.BootApplication</mainClass>
-						<args>
-							<arg>some</arg>
-							<arg>args</arg>
-						</args>
-						<ports>
-							<port>8080</port>
-						</ports>
-					</container>
-				</configuration>
-			</plugin>
-		</plugins>
+	<plugins>
+	<plugin>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-maven-plugin</artifactId>
+	</plugin>
+	</plugins>
 	</build>
+
+<!-- 	<build> -->
+<!-- 		<plugins> -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>com.google.cloud.tools</groupId> -->
+<!-- 				<artifactId>jib-maven-plugin</artifactId> -->
+<!-- 				<version>0.9.9</version> -->
+<!-- 				<configuration> -->
+<!-- 					<from> -->
+<!-- 						<image>openjdk:alpine</image> -->
+<!-- 					</from> -->
+<!-- 					<to> -->
+<!-- 						<image>eu.gcr.io/idb-mobile/test/misc/jib-test:${project.version}</image> -->
+<!-- 						<auth> -->
+<!-- 							<username>${env.REGISTRY_USERNAME}</username> -->
+<!-- 							<password>${env.REGISTRY_PASSWORD}</password> -->
+<!-- 						</auth> -->
+<!-- 					</to> -->
+<!-- 					<container> -->
+<!-- 						<jvmFlags> -->
+<!-- 							<jvmFlag>-Xms512m</jvmFlag> -->
+<!-- 							<jvmFlag>-Xdebug</jvmFlag> -->
+<!-- 						</jvmFlags> -->
+<!-- 						<mainClass>com.urosht.BootApplication</mainClass> -->
+<!-- 						<args> -->
+<!-- 							<arg>some</arg> -->
+<!-- 							<arg>args</arg> -->
+<!-- 						</args> -->
+<!-- 						<ports> -->
+<!-- 							<port>8080</port> -->
+<!-- 						</ports> -->
+<!-- 					</container> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
+<!-- 		</plugins> -->
+<!-- 	</build> -->
 
 </project>

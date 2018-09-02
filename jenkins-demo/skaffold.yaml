@@ -1,0 +1,11 @@
+---
+apiVersion: skaffold/v1alpha2
+kind: Config
+build:
+  artifacts:
+  - imageName: eu.gcr.io/idb-mobile-dev/test/jib-test
+    workspace: ./
+deploy:
+  kubectl:
+    manifests:
+    - ./k8s/*.yaml

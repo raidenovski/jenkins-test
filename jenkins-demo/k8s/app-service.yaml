@@ -8,6 +8,6 @@ metadata:
 spec:
   selector:
     app: my-app
-  port:
+  ports:
     - port: 80
       targetPort: 8080
