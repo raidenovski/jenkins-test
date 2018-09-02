@@ -1,0 +1,10 @@
+<settings>
+
+  <servers>
+    <server>
+      <id>registry.hub.docker.com</id>
+      <username>nediar</username>
+      <password>{Iv3qK+vECB0HnqEtQk/B8+4dphz7yEO+OnYkXMhvtEQXeLDhpt4PZTBOcZvRI8xm}</password>
+    </server>
+  </servers>
+</settings>

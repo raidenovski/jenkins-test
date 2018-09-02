@@ -6,7 +6,7 @@
 
 	<groupId>com.urosht</groupId>
 	<artifactId>jenkins-demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<packaging>jar</packaging>
 
 	<name>jenkins-demo</name>
@@ -61,11 +61,16 @@
 				<configuration>
 					<from>
 						<image>openjdk:alpine</image>
-						<credHelper>gcr</credHelper>
+						<!-- <credHelper>gcr</credHelper> -->
 					</from>
 					<to>
-						<image>eu.gcr.io/idb-mobile/test/misc/jib-test:0.0.1</image>
-						<credHelper>gcr</credHelper>
+						<image>eu.gcr.io/idb-mobile/test/misc/jib-test:${project.version}</image>
+						<!-- <credHelper>gcr</credHelper> -->
+						<auth>
+							<username>${env.REGISTRY_USERNAME}</username>
+							<password>${env.REGISTRY_PASSWORD}</password>
+						</auth>
+						<!-- <image>nediar/jib-test:${project.version}</image> -->
 					</to>
 					<container>
 						<jvmFlags>
