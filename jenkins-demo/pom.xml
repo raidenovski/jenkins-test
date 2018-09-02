@@ -61,16 +61,13 @@
 				<configuration>
 					<from>
 						<image>openjdk:alpine</image>
-						<!-- <credHelper>gcr</credHelper> -->
 					</from>
 					<to>
 						<image>eu.gcr.io/idb-mobile/test/misc/jib-test:${project.version}</image>
-						<!-- <credHelper>gcr</credHelper> -->
 						<auth>
 							<username>${env.REGISTRY_USERNAME}</username>
 							<password>${env.REGISTRY_PASSWORD}</password>
 						</auth>
-						<!-- <image>nediar/jib-test:${project.version}</image> -->
 					</to>
 					<container>
 						<jvmFlags>
